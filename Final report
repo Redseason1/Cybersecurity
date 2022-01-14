@@ -13,7 +13,6 @@ res = es.search(index="winlogbeat", body=query_str)
 result = res["aggregations"]["result"]["buckets"]
 
 computer_pd = pd.DataFrame(result, columns=["key", "doc_count"])
-#print(event_pd)
 computer_pd.plot(x="key", y="doc_count", kind="bar");
 plt.xlabel('Computer ID')
 plt.ylabel('Log Count')
